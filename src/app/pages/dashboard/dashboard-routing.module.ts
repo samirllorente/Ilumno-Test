@@ -16,6 +16,11 @@ const routes: Routes = [
         path: 'home',
         loadChildren: () => import('src/app/pages/home/home-routing.module')
           .then(mod => mod.HomeRoutingModule)
+      },
+      {
+        path: 'noticias/:slug',
+        loadChildren: () => import('src/app/pages/new/new-routing.module')
+          .then(mod => mod.NewRoutingModule)
       }
     ]
   }

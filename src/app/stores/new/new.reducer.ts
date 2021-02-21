@@ -3,7 +3,9 @@ import { New } from './new.model';
 import * as NewActions from './new.actions';
 
 export const newFeatureKey = 'new';
-export const initialState: Array<New> = [];
+export const initialState: NewState = {
+    news: []
+};
 
 export interface NewState {
     news: Array<New>;

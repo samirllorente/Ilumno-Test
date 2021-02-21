@@ -1,6 +1,6 @@
 <div class="row m-3" [@cardAnimation]="(news$ | async)?.length">
     <div class="col-12 col-lg-6 p-1" *ngFor="let item of (news$ | async)">
-        <mat-card class="h-100" role="button">
+        <mat-card class="h-100" role="button" [routerLink]="['/noticias', item.slug]">
             <mat-card-header class="d-inline overflow-hidden text-nowrap">
                 <mat-card-title class="text-truncate">{{ item.title }}</mat-card-title>
                 <mat-card-subtitle class="text-truncate" [innerHtml]="item.body"></mat-card-subtitle>
