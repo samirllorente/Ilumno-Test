@@ -22,7 +22,7 @@ export class NewEffects {
         private http: HttpClient
     ) { }
 
-    public getArena$ = createEffect(() =>
+    public getNews$ = createEffect(() =>
         this.actions$.pipe(
             ofType(GET_NEWS),
             exhaustMap(() =>

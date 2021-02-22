@@ -10,6 +10,7 @@ import { SidenavModule } from './sidenav/sidenav.module';
 
 import { HomeModule } from '../home/home.module';
 import { NewModule } from '../new/new.module';
+import { RegisterModule } from '../register/register.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { NewModule } from '../new/new.module';
     HeaderModule,
     HomeModule,
     NewModule,
+    RegisterModule,
     SidenavModule
   ]
 })

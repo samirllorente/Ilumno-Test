@@ -18,6 +18,11 @@ const routes: Routes = [
           .then(mod => mod.HomeRoutingModule)
       },
       {
+        path: 'registro',
+        loadChildren: () => import('src/app/pages/register/register-routing.module')
+          .then(mod => mod.RegisterRoutingModule)
+      },
+      {
         path: 'noticias/:slug',
         loadChildren: () => import('src/app/pages/new/new-routing.module')
           .then(mod => mod.NewRoutingModule)

@@ -1,0 +1,53 @@
+<div class="container mx-md-auto p-1 p-md-3">
+    <mat-card class="p-3">
+        <mat-card-content>
+            <form class="row" [formGroup]="form" #formDirective="ngForm" (ngSubmit)="createRegister(formDirective)">
+                <div class="col-12 col-md-6 mb-2">
+                    <mat-form-field class="w-100" appearance="legacy">
+                    <mat-label>Nombre<span class="text-danger">*</span></mat-label>
+                        <input matInput type="text" placeholder="Samir" formControlName="name">
+                    </mat-form-field>
+                </div>
+                <div class="col-12 col-md-6 mb-2">
+                    <mat-form-field class="w-100" appearance="legacy">
+                        <mat-label>Apellido<span class="text-danger">*</span></mat-label>
+                        <input matInput type="text" placeholder="Llorente" formControlName="family_name">
+                    </mat-form-field>
+                </div>
+                <div class="col-12 col-md-6 mb-2">
+                    <mat-form-field class="w-100" appearance="legacy">
+                        <mat-label>Email<span class="text-danger">*</span></mat-label>
+                        <input matInput type="email" placeholder="llorente@example.com" formControlName="email"> 
+                    </mat-form-field>
+                </div>
+                <div class="col-12 col-md-6 mb-2">
+                    <mat-form-field class="w-100" appearance="legacy">
+                        <mat-label>Teléfono</mat-label>
+                        <input matInput type="number" placeholder="3002005000" formControlName="phone">
+                    </mat-form-field>
+                </div>
+                <div class="col-12 mb-2">
+                    <mat-form-field class="w-100" appearance="legacy">
+                        <mat-label>Programa de interés</mat-label>
+                        <mat-select formControlName="program">
+                            <mat-option *ngFor="let item of (programs$ | async)" [value]="item.id + ''">
+                                {{ item.name }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-12 mb-2">
+                    <mat-form-field class="w-100" appearance="legacy">
+                        <mat-label>Comentario</mat-label>
+                        <textarea matInput formControlName="comment"></textarea>
+                    </mat-form-field>
+                </div>
+                <div class="d-flex">
+                    <button type="submit" mat-raised-button color="primary" class="mx-auto px-5" [disabled]="form.invalid">
+                        Enviar
+                    </button>
+                </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
